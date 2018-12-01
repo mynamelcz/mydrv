@@ -1,0 +1,29 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+DECLARE_WAIT_QUEUE_HEAD	./my_drv.c	/^static DECLARE_WAIT_QUEUE_HEAD(button_waitq);  $/;"	p	file:
+DEV_NAME	./my_drv.c	13;"	d	file:
+MOD_NAME	./my_drv.c	14;"	d	file:
+__attribute_used__	./my_drv.mod.c	/^__attribute_used__$/;"	v	file:
+__this_module	./my_drv.mod.c	/^struct module __this_module$/;"	v	typeref:struct:module
+ev_press	./my_drv.c	/^static volatile int ev_press = 0;  $/;"	v	file:
+gpfcon	./my_drv.c	/^volatile unsigned long *gpfcon;$/;"	v
+gpfdat	./my_drv.c	/^volatile unsigned long *gpfdat;$/;"	v
+gpgcon	./my_drv.c	/^volatile unsigned long *gpgcon;$/;"	v
+gpgdat	./my_drv.c	/^volatile unsigned long *gpgdat;$/;"	v
+key_irq_handle	./my_drv.c	/^static irqreturn_t key_irq_handle(int irq, void *dev_id)$/;"	f	file:	signature:(int irq, void *dev_id)
+key_val	./my_drv.c	/^    unsigned int key_val;$/;"	m	struct:pin_dec	file:	access:public
+key_val_tab	./my_drv.c	/^int key_val_tab;$/;"	v
+main	./my_app.c	/^int main(int argc, char **argv)$/;"	f	signature:(int argc, char **argv)
+my_drv_open	./my_drv.c	/^static int my_drv_open(struct inode *inode, struct file *file)$/;"	f	file:	signature:(struct inode *inode, struct file *file)
+my_drv_read	./my_drv.c	/^ssize_t my_drv_read(struct file *file, char __user *buf, size_t size, loff_t *ppos)$/;"	f	signature:(struct file *file, char __user *buf, size_t size, loff_t *ppos)
+mydrv_class	./my_drv.c	/^static struct class *mydrv_class;$/;"	v	typeref:struct:class	file:
+mydrv_class_dev	./my_drv.c	/^static struct class_device	*mydrv_class_dev;$/;"	v	typeref:struct:class_device	file:
+pin	./my_drv.c	/^    unsigned int pin;$/;"	m	struct:pin_dec	file:	access:public
+pin_dec	./my_drv.c	/^struct pin_dec{$/;"	s	file:
+pin_dec::key_val	./my_drv.c	/^    unsigned int key_val;$/;"	m	struct:pin_dec	file:	access:public
+pin_dec::pin	./my_drv.c	/^    unsigned int pin;$/;"	m	struct:pin_dec	file:	access:public
+pins_dec	./my_drv.c	/^struct pin_dec pins_dec[4] = {$/;"	v	typeref:struct:pin_dec
