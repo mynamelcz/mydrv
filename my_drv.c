@@ -9,7 +9,7 @@
 #include <asm/io.h>
 #include <asm/arch/regs-gpio.h>
 #include <asm/hardware.h>
-
+#include <linux/poll.h>
 #define DEV_NAME "my_drv"
 #define MOD_NAME "xyz"
 
@@ -83,12 +83,20 @@ int my_drv_close(struct inode *inode, struct file *file)
    free_irq(IRQ_EINT11, &pins_dec[3]);
    return 0;
 }
-
+static unsigned int my_drv_poll(struct file *file, poll_table *wait)
+{
+    unsigned int mask = 0;
+    poll_wait(file, &button_waitq, wait);
+    if(ev_press)
+        mask |= POLLIN |POLLRDNORM;
+    return mask;
+}
 static struct file_operations my_drv_fops = {
     .owner  =   THIS_MODULE,    /* 这是一个宏，推向编译模块时自动创建的__this_module变量 */
     .open   =   my_drv_open,     
 	.read	=	my_drv_read,	   
     .release=   my_drv_close,
+    .poll   =   my_drv_poll,
 };
 
 
